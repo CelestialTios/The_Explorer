@@ -58,6 +58,16 @@ namespace Gamekit2D
             m_Source.PlayOneShot(source[choice]);
         }
 
+        public void PlaySpecificSound(AudioClip clip)
+        {
+            AudioClip source = clip;
+
+            if (randomizePitch)
+                m_Source.pitch = Random.Range(1.0f - pitchRange, 1.0f + pitchRange);
+
+            m_Source.PlayOneShot(source);
+        }
+
         public void Stop()
         {
             m_Source.Stop();

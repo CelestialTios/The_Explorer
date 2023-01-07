@@ -19,7 +19,6 @@ namespace Assets._2DGamekit.Scripts.Audio
 
         public void AfterPlaySound(TileBase surface = null)
         {
-            Debug.Log("Play After sound");
             m_Source.PlayOneShot(afterClip);
         }
     }

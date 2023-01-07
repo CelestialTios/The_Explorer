@@ -349,6 +349,7 @@ namespace Gamekit2D
         public void SetVerticalMovement(float newVerticalMovement)
         {
             m_MoveVector.y = newVerticalMovement;
+            hurtAudioPlayer.PlaySpecificSound(hurtAudioPlayer.clips[0]);
         }
 
         public void IncrementMovement(Vector2 additionalMovement)
@@ -633,6 +634,8 @@ namespace Gamekit2D
 
                 if (m_HoldingGunTimeRemaining <= 0f)
                 {
+                    if(m_Animator.GetBool(m_HashHoldingGunPara))
+                        rangedAttackAudioPlayer.AfterPlaySound();
                     m_Animator.SetBool(m_HashHoldingGunPara, false);
                 }
             }
